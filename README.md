@@ -31,21 +31,26 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 - Metricbeat records the metrics and statistics from the operation system and from services running on the server.
 
 The configuration details of each machine may be found below.
-_Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
-| Name     | Function | IP Address | Operating System |
-|----------|----------|------------|------------------|
-| Jump Box | Gateway  | 10.0.0.1   | Linux            |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
-
+| Name                 | Function     | IP Address               | Operating System |
+|----------------------|--------------|--------------------------|------------------|
+| Jump-Box-Provisioner | Gateway      | 10.0.0.4 /13.73.197.17   | Linux            |
+| Web-1                |Web Server    | 10.0.0.5                 | Linux            |
+| Web-2                |Web Server    | 10.0.0.6                 | Linux            |
+| ELK-SERVER           |ELK Server    | 10.1.0.4 /168.63.243.204 | Linux            |
+| Load Balancer        |Load Balancer | 13.75.199.142            | Linux            | 
 ### Access Policies
 
 The machines on the internal network are not exposed to the public Internet. 
 
-Only the _____ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- _TODO: Add whitelisted IP addresses_
+Only the ELK-SERVER  machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses: 
+
+- _Work Station public IP through port 5601
+
+Machines within the network can only be accessed by _Workstation_ and _Jump-Box-Provisioner_.
+Which machine did you allow to access your ELK VM? What was its IP address?
+- _Jump-Box-Provisioner IP : 10.0.0.4 via SSH port 22_ 
+- _Workstation Public IP via port TCP 5601_
 
 Machines within the network can only be accessed by _____.
 - _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
