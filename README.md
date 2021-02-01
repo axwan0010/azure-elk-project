@@ -45,29 +45,30 @@ The machines on the internal network are not exposed to the public Internet.
 
 Only the ELK-SERVER  machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses: 
 
-- _Work Station public IP through port 5601
+- Work Station public IP through port 5601
 
-Machines within the network can only be accessed by _Workstation_ and _Jump-Box-Provisioner_.
-Which machine did you allow to access your ELK VM? What was its IP address?
-- _Jump-Box-Provisioner IP : 10.0.0.4 via SSH port 22_ 
-- _Workstation Public IP via port TCP 5601_
+Machines within the network can only be accessed by Jump-Box-Provisioner and Workstation have allowed access to ELK-SERVER.
 
-Machines within the network can only be accessed by _____.
-- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
+- Jump-Box-Provisioner IP : 10.0.0.4 through SSH port 20
+- Workstation Public IP through TCP port 5601
 
 A summary of the access policies in place can be found in the table below.
 
-| Name     | Publicly Accessible | Allowed IP Addresses |
-|----------|---------------------|----------------------|
-| Jump Box | Yes/No              | 10.0.0.1 10.0.0.2    |
-|          |                     |                      |
-|          |                     |                      |
+| Name        | Publicly Accessible  | Allowed IP Addresses                  |
+|-------------|----------------------|---------------------------------------|
+| Jump Box    |      No              | Workstation Public IP on SSH  p22     |
+|   Web-1     |      No              | 10.0.0.4 on SSH  22                   |
+|   Web-2     |      No              | 10.0.0.4 on SSH  22                   |
+| ELK-SERVER  |      No              | Workstation Public IP using TCP p5601 |
+|Load balancer|      No              | Workstation Public IP on  HTTP p80    |  
 
 ### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- _TODO: What is the main advantage of automating configuration with Ansible?_
 
+- Ansible allows automating tasks, which saves a lot of time. IT admins can quickly deploy mutiple configuration throug the ansible playbook and Ansible will automatically 
+  check the system state and update the system base on the playbook content.
+  
 The playbook implements the following tasks:
 - _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
 - ...
@@ -75,7 +76,7 @@ The playbook implements the following tasks:
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)
+!
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
